@@ -12,8 +12,8 @@ zipped_file<-unzip("zipped_file",exdir="unzipped_data")
 
 #Changing directory to read unzipped data
 setwd("unzipped_data")
-data_folder<-list.files()
 
+##reading data
 data_set<-read.table("household_power_consumption.txt", header = TRUE,sep = ";",stringsAsFactors=FALSE)
 
 ##Subseting data for 2 days only

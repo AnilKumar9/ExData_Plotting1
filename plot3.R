@@ -1,5 +1,4 @@
 
-dir.create("data_ploting")
 
 setwd("data_ploting")
 
@@ -12,10 +11,11 @@ zipped_file<-unzip("zipped_file",exdir="unzipped_data")
 
 #Changing directory to read unzipped data
 setwd("unzipped_data")
-data_folder<-list.files()
+
 
 ##reading data
-data_set<-read.table(data_folder, header = TRUE,sep = ";",stringsAsFactors=FALSE)
+
+data_set<-read.table("household_power_consumption.txt", header = TRUE,sep = ";",stringsAsFactors=FALSE)
 ##subseting data
 data_subset<-subset(data_set,(as.Date(data_set$Date,"%d/%m/%Y")=="2007-02-02"
                               |as.Date(data_set$Date,"%d/%m/%Y")=="2007-02-01"))
